@@ -9,6 +9,19 @@ To manage the metadata, I use the following tools:
 - [ffmpeg](https://ffmpeg.org/)
 - [ExifTool](https://exiftool.org/)
 
+**Table of Content**
+- [MP4 Metadata Management](#mp4-metadata-management)
+  - [ExifTool](#exiftool)
+  - [Zoner Photo Studio X](#zoner-photo-studio-x)
+  - [Synology Photos](#synology-photos)
+    - [Mapping](#mapping)
+    - [Creation Date](#creation-date)
+    - [GPS](#gps)
+    - [All in One](#all-in-one)
+  - [OneDrive Photos](#onedrive-photos)
+    - [Creation Date](#creation-date-1)
+    - [GPS](#gps-1)
+
 
 ## ExifTool
 ExifTool is a great tool to work with metadata.
