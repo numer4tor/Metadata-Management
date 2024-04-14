@@ -97,10 +97,15 @@ See also this [article](https://kb.synology.com/en-global/DSM/tutorial/What_can_
 | File:System:Time:FileModifyDate  | ?                                | 3    |
 
 I don't know why, but MP4 files haven't set the information when just upload it to synology Photos.
-To set all metadata correctly, just update the creation date of the file:
+To set all metadata correctly, just reset the CreateDate of the file:
 ```
 .\exiftool.exe -QuickTime:Keys:Time:CreationDate<QuickTime:Time:CreateDate FILE
+.\exiftool.exe -QuickTime:Keys:Time:CreationDate>QuickTime:Time:CreateDate FILE
+.\exiftool.exe -QuickTime:Keys:Time:CreationDate= FILE
 ```
+
+I don't set CreationDate because of timezone problems. See [this post](https://community.synology.com/enu/forum/1/post/138615).
+
 
 ### GPS
 
@@ -136,7 +141,9 @@ Then make sure that the GPS information is also stored in the metadata field `Qu
 For each folder containing MP4 with the corresponding XMP files, execute:
 ```
 # Set Creation Date
-.\exiftool.exe -ext mp4 -QuickTime:Keys:Time:CreationDate<QuickTime:Time:CreateDate .
+.\exiftool.exe -ext mp4-QuickTime:Keys:Time:CreationDate<QuickTime:Time:CreateDate .
+.\exiftool.exe -ext mp4-QuickTime:Keys:Time:CreationDate>QuickTime:Time:CreateDate .
+.\exiftool.exe -ext mp4 -QuickTime:Keys:Time:CreationDate= .
 
 # Set GPS
 .\exiftool.exe -ext mp4 -tagsfromfile %f.xmp .
