@@ -141,9 +141,9 @@ Then make sure that the GPS information is also stored in the metadata field `Qu
 For each folder containing MP4 with the corresponding XMP files, execute:
 ```
 # Set Creation Date
-.\exiftool.exe -ext mp4-QuickTime:Keys:Time:CreationDate<QuickTime:Time:CreateDate .
-.\exiftool.exe -ext mp4-QuickTime:Keys:Time:CreationDate>QuickTime:Time:CreateDate .
-.\exiftool.exe -ext mp4 -QuickTime:Keys:Time:CreationDate= .
+.\exiftool.exe -ext mp4 -overwrite_original -QuickTime:Keys:Time:CreationDate<QuickTime:Time:CreateDate .
+.\exiftool.exe -ext mp4 -overwrite_original -QuickTime:Keys:Time:CreationDate>QuickTime:Time:CreateDate .
+.\exiftool.exe -ext mp4 -overwrite_original -QuickTime:Keys:Time:CreationDate= .
 
 # Set GPS
 .\exiftool.exe -ext mp4 -tagsfromfile %f.xmp .
