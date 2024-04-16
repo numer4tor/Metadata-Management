@@ -146,8 +146,8 @@ For each folder containing MP4 with the corresponding XMP files, execute:
 .\exiftool.exe -ext mp4 -overwrite_original -QuickTime:Keys:Time:CreationDate= .
 
 # Set GPS
-.\exiftool.exe -ext mp4 -tagsfromfile %f.xmp .
-.\exiftool.exe -ext mp4 -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
+.\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
+.\exiftool.exe -ext mp4 -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
 ```
 
 
