@@ -53,8 +53,8 @@ ffmpeg is a great tool to convert videos from one format into the other.
 Here some useful commands:
 
 ```
-# convert .mov to .mp4 files without losing quality:
-.\ffmpeg.exe  -i .\input.mov -c:v copy -c:a copy .\output.mp4
+# convert .mov video file with H264 encoding:
+.\ffmpeg.exe  -i .\input.mov -c:v libx264 -c:a copy .\output.mp4
 
 ```
 
@@ -167,9 +167,19 @@ For each folder containing MP4 with the corresponding XMP files, execute:
 
 ### File Format
 
-Synology photos doesn't preview .mov videos. Therfore I convert them with ffmpeg to .mp4 files.
+Synology photos doesn't preview .mov videos. Therfore I convert them with ffmpeg to .mp4 files using the following command:
 
+```
+ffmpeg -i INPUT.mov \
+  -c:v libx264 \
+  -crf 17 \
+  -c:a copy \
+  OUTPUT.mp4
+```
 
+- **-c:v libx264**: convert the video file with H264 encoding
+- **-crf 17 crf**: Constant Rate Factor
+- **-c:a copy**: Copy the audio from original video to destination video file
 
 ## OneDrive Photos
 
