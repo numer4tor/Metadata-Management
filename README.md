@@ -12,12 +12,14 @@ To manage the metadata, I use the following tools:
 **Table of Content**
 - [MP4 Metadata Management](#mp4-metadata-management)
   - [ExifTool](#exiftool)
+  - [ffmpeg](#ffmpeg)
   - [Zoner Photo Studio X](#zoner-photo-studio-x)
   - [Synology Photos](#synology-photos)
-    - [Mapping](#mapping)
+    - [Metadata  Mapping](#metadata--mapping)
     - [Creation Date](#creation-date)
     - [GPS](#gps)
     - [All in One](#all-in-one)
+    - [File Format](#file-format)
   - [OneDrive Photos](#onedrive-photos)
     - [Creation Date](#creation-date-1)
     - [GPS](#gps-1)
@@ -44,6 +46,19 @@ Here some useful commands:
 
 ```
 
+
+## ffmpeg
+ffmpeg is a great tool to convert videos from one format into the other.
+
+Here some useful commands:
+
+```
+# convert .mov to .mp4 files without losing quality:
+.\ffmpeg.exe  -i .\input.mov -c:v copy -c:a copy .\output.mp4
+
+```
+
+
 ## Zoner Photo Studio X
 The mapping from the Windows Fileexplorer to the mp4 metadata available in ZPS X is as follows:
 
@@ -69,7 +84,7 @@ I like to write this information directly into the following file metadata:
 
 ## Synology Photos
 
-### Mapping
+### Metadata  Mapping
 
 | Metadata field                           | Synology Photos                  |
 | ---------------------------------------- | -------------------------------- |
@@ -149,6 +164,11 @@ For each folder containing MP4 with the corresponding XMP files, execute:
 .\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
 .\exiftool.exe -ext mp4 -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
 ```
+
+### File Format
+
+Synology photos doesn't preview .mov videos. Therfore I convert them with ffmpeg to .mp4 files.
+
 
 
 ## OneDrive Photos
