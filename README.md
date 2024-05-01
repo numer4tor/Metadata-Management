@@ -100,16 +100,6 @@ The mapping from the Sidecar File to the Metadata is as follows:
 | exif:GPSAltitudeRef             | XMP:XMP-exif:Location:GPS Altitude Ref          | -                                          |
 
 
-Some information to timestamp format:
-| Metadata                                   | Format                    |
-| ------------------------------------------ | ------------------------- |
-| QuickTime:UserData:Time:Date/Time Original | 9999:99:99 99:99:99+99:99 |
-| XMP:XMP-exif:Time:Date/Time Original       | 9999:99:99 99:99:99       |
-| XMP:XMP-photoshop:Time:Date Created        | 9999:99:99 99:99:99       |
-| QuickTime:Time:Create Date                 | 9999:99:99 99:99:99       |
-| XMP:XMP-xmp:Time:Create Date               | 9999:99:99 99:99:99.999   |
-
-
 ## ffmpeg
 ffmpeg is a great tool to convert videos from one format into the other.
 
@@ -120,6 +110,20 @@ Here some useful commands:
 .\ffmpeg.exe  -i .\input.mov -c:v libx264 -c:a copy .\output.mp4
 
 ```
+
+
+## Timestamp format
+
+Some information to timestamp format:
+
+| Metadata                                 | Format                    |
+| ---------------------------------------- | ------------------------- |
+| QuickTime:Keys:Time:CreationDate         | 9999:99:99 99:99:99+99:99 |
+| QuickTime:Time:CreateDate                | 9999:99:99 99:99:99       |
+| QuickTime:UserData:Time:DateTimeOriginal | 9999:99:99 99:99:99+99:99 |
+| XMP:XMP-exif:Time:DateTimeOriginal       | 9999:99:99 99:99:99       |
+| XMP:XMP-photoshop:Time:DateCreated       | 9999:99:99 99:99:99       |
+| XMP:XMP-xmp:Time:CreateDate              | 9999:99:99 99:99:99.999   |
 
 
 ## Windows File Explorer
@@ -205,20 +209,23 @@ The mapping from the Windows Fileexplorer to the mp4 metadata available in ZPS X
 
 ## Synology Photos
 
-### Metadata  Mapping
+### Time Metadata  Mapping
 
-| Metadata field                           | Synology Photos                  |
-| ---------------------------------------- | -------------------------------- |
-| QuickTime:Keys:Time:CreationDate         | com.apple.quicktime.creationdate |
-| QuickTime:Time:ModifyDate                | Modification Date-Time           |
-| QuickTime:Track1:Time:TrackCreateDate    | Video Track Create Date          |
-| QuickTime:Track1:Time:TrackModifyDate    | Video Track Modify Date          |
-| QuickTime:Track1:Time:MediaCreateDate    | Media Track Create Date          |
-| QuickTime:Track1:Time:MediaModifyDate    | Media Track Modify Date          |
-| QuickTime:Track2:Time:TrackCreateDate    | Audio Track Create Date          |
-| QuickTime:Track2:Time:TrackModifyDate    | Audio Track Modify Date          |
-| QuickTime:UserData:Time:DateTimeOriginal | -                                |
-| QuickTime:Time:CreateDate                | Date-Time Original               |
+| Metadata field                           | Synology Photos                  | Remark                        |
+| ---------------------------------------- | -------------------------------- | ----------------------------- |
+| QuickTime:Keys:Time:CreationDate         | com.apple.quicktime.creationdate | Correct time (with timezone)  |
+| QuickTime:Time:ModifyDate                | Modification Date-Time           |                               |
+| QuickTime:Track1:Time:TrackCreateDate    | Video Track Create Date          |                               |
+| QuickTime:Track1:Time:TrackModifyDate    | Video Track Modify Date          |                               |
+| QuickTime:Track1:Time:MediaCreateDate    | Media Track Create Date          |                               |
+| QuickTime:Track1:Time:MediaModifyDate    | Media Track Modify Date          |                               |
+| QuickTime:Track2:Time:TrackCreateDate    | Audio Track Create Date          |                               |
+| QuickTime:Track2:Time:TrackModifyDate    | Audio Track Modify Date          |                               |
+| QuickTime:UserData:Time:DateTimeOriginal | -                                |                               |
+| QuickTime:Time:CreateDate                | Date-Time Original               | Wrong time (without timezone) |
+| XMP:XMP-exif:Time:DateTimeOriginal       | -                                |                               |
+| XMP:XMP-photoshop:Time:DateCreated       | -                                |                               |
+| XMP:XMP-xmp:Time:CreateDate              | -                                |                               |
 
 
 ### Creation Date
