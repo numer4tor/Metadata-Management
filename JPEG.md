@@ -19,6 +19,8 @@ Some information to timestamp format:
 | EXIF:ExifIFD:Time:Create Date                | 9999:99:99 99:99:99       |
 | EXIF:ExifIFD:Time:Offset Time                | +99:99                    |
 | EXIF:ExifIFD:Time:Offset Time Original       | +99:99                    |
+| EXIF:IFD0:Time:Modify Date                   | 9999:99:99 99:99:99       |
+| IPTC:Time:Date Created                       | 9999:99:99                |
 | XMP:XMP-microsoft:Time:Date Acquired         | 9999:99:99 99:99:99.999   |
 
 
@@ -94,3 +96,66 @@ The mapping from the Windows Fileexplorer to the JPEG metadata is as follows:
 
 ## Zoner Photo Studio X
 The mapping from ZPS X to the JPEG metadata is as follows:
+
+| Kategorie         | Field                        | Metadata Field                                                                                       |
+| ----------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Textinformationen | Name                         | EXIF:IFD0:Image:Image Description <br/> XMP:XMP-dc:Image:Title <br/> IPTC:Other:Object Name          |
+| Textinformationen | Autor                        | EXIF:IFD0:Author:Artist <br/> XMP:XMP-dc:Author:Creator <br/> IPTC:Author:By-line                    |
+| Textinformationen | Copyright                    | EXIF:IFD0:Author:Copyright <br/> XMP:XMP-dc:Author:Rights <br/> IPTC:Author:Copyright Notice         |
+| Textinformationen | Beschreibung                 | EXIF:ExifIFD:Image:User Comment <br/> XMP:XMP-dc:Image:Description <br/> IPTC:Other:Caption-Abstract |
+| Textinformationen | Beschreibung - Autor         | XMP:XMP-photoshop:Author:Caption Writer <br/> IPTC:Author:Writer-Editor                              |
+| Textinformationen | Farbmarkierung               | XMP:XMP-xmp:Image:Label                                                                              |
+| Textinformationen | Bewertung                    | XMP:XMP-xmp:Image:Rating                                                                             |
+| Fotoinformationen | Erstellt                     | EXIF:ExifIFD:Time:Date/Time Original <br/> IPTC:Time:Date Created                                    |
+| Fotoinformationen | Digitalisiert                | EXIF:ExifIFD:Time:Create Date                                                                        |
+| Fotoinformationen | Geändert                     | File:System:Time:File Modification Date/Time <br/> EXIF:IFD0:Time:Modify Date                        |
+| Fotoinformationen | Empfindlichkeit              | EXIF:ExifIFD:Image:ISO                                                                               |
+| Fotoinformationen | Belichtungszeit              | EXIF:ExifIFD:Image:Exposure Time                                                                     |
+| Fotoinformationen | Blende                       | EXIF:ExifIFD:Image:F Number <br/> XMP:XMP-exif:Image:Aperture Value                                  |
+| Fotoinformationen | Brennweite                   | EXIF:ExifIFD:Camera:Focal Length                                                                     |
+| Fotoinformationen | Brennweite (EQ35mm)          | EXIF:ExifIFD:Camera:Focal Length In 35mm Format                                                      |
+| Fotoinformationen | Objektiv                     | EXIF:ExifIFD:Image:Lens Model                                                                        |
+| Fotoinformationen | Hersteller des Objektivs     | EXIF:ExifIFD:Image:Lens Make                                                                         |
+| Fotoinformationen | Belichtungskorrektur         | EXIF:ExifIFD:Image:Exposure Compensation                                                             |
+| Fotoinformationen | Blitz                        | EXIF:ExifIFD:Camera:Flash                                                                            |
+| Fotoinformationen | Hersteller der Kamera        | EXIF:IFD0:Camera:Make                                                                                |
+| Fotoinformationen | Kameramodell                 | EXIF:IFD0:Camera:Camera Model Name                                                                   |
+| Fotoinformationen | Software                     | EXIF:IFD0:Image:Software                                                                             |
+| Fotoinformationen | Belichtungsprogramm          | EXIF:ExifIFD:Camera:Exposure Program                                                                 |
+| Fotoinformationen | Belichtungsmodus             | EXIF:ExifIFD:Camera:Exposure Mode                                                                    |
+| Fotoinformationen | Modus für Belichtungsmessung | EXIF:ExifIFD:Camera:Metering Mode                                                                    |
+| Fotoinformationen | Typ der aufgenommenen Szene  | EXIF:ExifIFD:Camera:Scene Capture Type                                                               |
+| Fotoinformationen | Weissabgleich                | EXIF:ExifIFD:Camera:White Balance                                                                    |
+| Fotoinformationen | Blitz Detaillierte Info      | N/A                                                                                                  |
+| Fotoinformationen | Transformation               | N/A                                                                                                  |
+| Fotoinformationen | Maximale Blendenöffnung      | EXIF:ExifIFD:Camera:Max Aperture Value                                                               |
+| Fotoinformationen | Digital-Zoom-Verhältnis      | EXIF:ExifIFD:Camera:Digital Zoom Ratio                                                               |
+| Fotoinformationen | Geographische Breite         | EXIF:GPS:Location:GPS Latitude                                                                       |
+| Fotoinformationen | Geographische Länge          | EXIF:GPS:Location:GPS Longitude                                                                      |
+| Fotoinformationen | Farbraum                     | EXIF:ExifIFD:Image:Color Space                                                                       |
+| Fotoinformationen | Farbmodell                   | File:Image:Y Cb Cr Sub Sampling                                                                      |
+| Fotoinformationen | Komprimierung                | File:Other:File Type                                                                                 |
+| Fotoinformationen | Auflösung                    | N/A                                                                                                  |
+| Fotoinformationen | Eindeutige Bild-ID           | EXIF:ExifIFD:Image:Image Unique ID                                                                   |
+| Fotoinformationen | Digitale Unterschrift        | N/A                                                                                                  |
+| Fotoinformationen | Dynamikumfang                | N/A                                                                                                  |
+| Fotoinformationen | Primärfarben                 | N/A                                                                                                  |
+| Fotoinformationen | Weisspunkt                   | N/A                                                                                                  |
+| Fotoinformationen | Übertragungscharakteristik   | N/A                                                                                                  |
+| Schlüsselwörter   | Gewählte Schlüsselwörter     | XMP:XMP-dc:Image:Subject <br/> IPTC:Other:Keywords                                                   |
+| Bildquellen       | Verdienste                   | IPTC:Author:Credit                                                                                   |
+| Bildquellen       | Quelle                       | IPTC:Author:Source                                                                                   |
+| Bildquellen       | Kopfzeile                    | IPTC:Other:Headline                                                                                  |
+| Bildquellen       | Anweisungen                  | XMP:XMP-photoshop:Image:Instructions <br/> IPTC:Other:Special Instructions                           |
+| Bildquellen       | Verweis zu Ursprung          | XMP:XMP-photoshop:Image:Transmission Reference <br/> IPTC:Other:Original Transmission Reference      |
+| Bildquellen       | Dringlichkeit                | IPTC:Other:Urgency                                                                                   |
+| Benutzerinfo      | Name in Fremdsprache         | XMP:XMP-znr:Unknown:International Title                                                              |
+| Benutzerinfo      | Beschreibung in Fremdsprache | XMP:XMP-znr:Unknown:International Description                                                        |
+| Benutzerinfo      | Veröffentlicht in            | XMP:XMP-znr:Unknown:Published In                                                                     |
+| Benutzerinfo      | Stativ                       | XMP:XMP-znr:Unknown:Tripod                                                                           |
+| Benutzerinfo      | Filter                       | XMP:XMP-znr:Unknown:Filter                                                                           |
+| Benutzerinfo      | Zwischenriing                | XMP:XMP-znr:Unknown:Mezikrouzek                                                                      |
+| Benutzerinfo      | Film                         | XMP:XMP-znr:Unknown:Film                                                                             |
+| Benutzerinfo      | Filmbeschriftung im Archiv   | XMP:XMP-znr:Unknown:Film Archive Label                                                               |
+| Benutzerinfo      | Format                       | XMP:XMP-znr:Unknown:Film Format                                                                      |
+| Benutzerinfo      | Verwendung                   | XMP:XMP-znr:Unknown:Use                                                                              |
