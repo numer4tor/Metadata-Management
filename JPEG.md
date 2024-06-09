@@ -159,3 +159,16 @@ The mapping from ZPS X to the JPEG metadata is as follows:
 | Benutzerinfo      | Filmbeschriftung im Archiv   | XMP:XMP-znr:Unknown:Film Archive Label                                                               |
 | Benutzerinfo      | Format                       | XMP:XMP-znr:Unknown:Film Format                                                                      |
 | Benutzerinfo      | Verwendung                   | XMP:XMP-znr:Unknown:Use                                                                              |
+
+
+## Synology Photos
+The mapping from the JPEG metadata to the Syonology Photos metadata is as follows (see also [this article](https://kb.synology.com/en-uk/DSM/tutorial/What_metadata_standards_does_Synology_Photos_support)):
+
+| Synology Photos Field | Metadata Field                                                                                                                                                                                |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Description           | EXIF:IFD0:Image:Image Description                                                                                                                                                             |
+| Rating                | 1. EXIF:IFD0:Image:Rating <br/> 2. EXIF:IFD0:Image:Rating Percent <br/> 3. XMP:XMP-xmp:Image:Rating <br/> 4. XMP:XMP-xmp:Image:Rating Percent <br/> 5. XMP:XMP-microsoft:Image:Rating Percent |
+| Date Taken            | 1. EXIF:ExifIFD:Time:Date/Time Original <br/> 2.                                                                                                                                              |
+| Geolocation           |                                                                                                                                                                                               |
+| Camera                |                                                                                                                                                                                               |
+| Tags                  | 1. XMP:XMP-dc:Image:Subject <br/> 2. IPTC:Other:Keywords                                                                                                                                      |
