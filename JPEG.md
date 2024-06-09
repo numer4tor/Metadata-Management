@@ -5,7 +5,10 @@ Manage metadata for JPEG pictures
   - [Timestamp format](#timestamp-format)
   - [Windows File Explorer](#windows-file-explorer)
   - [Zoner Photo Studio X](#zoner-photo-studio-x)
-
+  - [Synology Photos](#synology-photos)
+    - [Information](#information)
+    - [More](#more)
+    - [Problems](#problems)
 
 ## Timestamp format
 Some information to timestamp format:
@@ -162,13 +165,117 @@ The mapping from ZPS X to the JPEG metadata is as follows:
 
 
 ## Synology Photos
-The mapping from the JPEG metadata to the Syonology Photos metadata is as follows (see also [this article](https://kb.synology.com/en-uk/DSM/tutorial/What_metadata_standards_does_Synology_Photos_support)):
 
-| Synology Photos Field | Metadata Field                                                                                                                                                                                |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Description           | EXIF:IFD0:Image:Image Description                                                                                                                                                             |
+### Information
+The mapping from the JPEG metadata to the Syonology Photos metadata in the tab Information is as follows (see also [this article](https://kb.synology.com/en-uk/DSM/tutorial/What_metadata_standards_does_Synology_Photos_support)):
+
+| Synology Photos Field | Metadata Field                                                                                       |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| Description           | EXIF:IFD0:Image:Image Description                                                                    |
 | Rating                | 1. EXIF:IFD0:Image:Rating <br/> 2. EXIF:IFD0:Image:Rating Percent <br/> 3. XMP:XMP-xmp:Image:Rating <br/> 4. XMP:XMP-xmp:Image:Rating Percent <br/> 5. XMP:XMP-microsoft:Image:Rating Percent |
-| Date Taken            | 1. EXIF:ExifIFD:Time:Date/Time Original <br/> 2.                                                                                                                                              |
-| Geolocation           |                                                                                                                                                                                               |
-| Camera                |                                                                                                                                                                                               |
-| Tags                  | 1. XMP:XMP-dc:Image:Subject <br/> 2. IPTC:Other:Keywords                                                                                                                                      |
+| Date Taken            | 1. EXIF:ExifIFD:Time:Date/Time Original <br/> 2. EXIF:ExifIFD:Time:Create Date <br/> 3. EXIF:IFD0:Time:Modify Date <br/> 4. File:System:Time:File Modification Date/Time                                                 |
+| Geolocation           | Composite:Location:GPS Position                                                                      |
+| Camera                | A combination of <br/> - EXIF:IFD0:Camera:Camera Model Name <br> - EXIF:ExifIFD:Image:Aperture Value <br/> - EXIF:ExifIFD:Image:Exposure Time <br/> - EXIF:ExifIFD:Camera:Focal Length <br/> - EXIF:ExifIFD:Image:ISO |
+| Tags                  | 1. XMP:XMP-dc:Image:Subject <br/> 2. IPTC:Other:Keywords                                             |
+
+### More
+The mapping from the JPEG metadata to the Syonology Photos metadata in the tab Information is as follows:
+
+| Synology Photos Field      | Metadata Field                                  |
+| -------------------------- | ----------------------------------------------- |
+| Aperture                   | EXIF:ExifIFD:Image:Aperture Value               |
+| Artist                     | EXIF:IFD0:Author:Artist                         |
+| By-line                    | IPTC:Author:By-line                             |
+| Caption                    | IPTC:Other:Caption-Abstract                     |
+| Caption Writer             | XMP:XMP-photoshop:Author:Caption Writer         |
+| Character Set              | IPTC:Other:Coded Character Set                  |
+| Color Space                | EXIF:ExifIFD:Image:Color Space                  |
+| Compression                | EXIF:IFD0:Image:Compression                     |
+| Copyright                  | EXIF:IFD0:Author:Copyright                      |
+| Create Date                | EXIF:ExifIFD:Time:Create Date                   |
+| Creator                    | XMP:XMP-dc:Author:Creator                       |
+| Credit                     | IPTC:Author:Credit                              |
+| Date Created               | IPTC:Time:Date Created                          |
+| Date and Time              | EXIF:IFD0:Time:Modify Date                      |
+| Date and Time (digitized)  | EXIF:ExifIFD:Time:Create Date                   |
+| Date and Time (original)   | EXIF:ExifIFD:Time:Date/Time Original            |
+| Date and Time Original     | EXIF:ExifIFD:Time:Date/Time Original            |
+| Description                | XMP:XMP-dc:Image:Description                    |
+| Digital Zoom Ratio         | EXIF:ExifIFD:Camera:Digital Zoom Ratio          |
+| Exif IFD Pointer           |                                                 |
+| Exif Version               | EXIF:ExifIFD:Image:Exif Version                 |
+| Exposure Bias              | EXIF:ExifIFD:Image:Exposure Compensation        |
+| Exposure Mode              | EXIF:ExifIFD:Camera:Exposure Mode               |
+| Exposure Program           | EXIF:ExifIFD:Camera:Exposure Program            |
+| Exposure Time              | EXIF:ExifIFD:Image:Exposure Time                |
+| F Number                   | EXIF:ExifIFD:Image:F Number                     |
+| FNumber                    | EXIF:ExifIFD:Image:F Number                     |
+| FilmArchiveLabel           | XMP:XMP-znr:Unknown:Film Archive Label          |
+| FilmFormat                 | XMP:XMP-znr:Unknown:Film Format                 |
+| Flash                      | EXIF:ExifIFD:Camera:Flash                       |
+| Focal Length               | EXIF:ExifIFD:Camera:Focal Length                |
+| Focal Length In 35mm Film  | EXIF:ExifIFD:Camera:Focal Length In 35mm Format |
+| GPS Info IFD Pointer       |                                                 |
+| GPS Latitude               | EXIF:GPS:Location:GPS Latitude                  |
+| GPS latitude Reference     | EXIF:GPS:Location:GPS Latitude Ref              |
+| GPS Longitude              | EXIF:GPS:Location:GPS Longitude                 |
+| GPS Longitude Reference    | EXIF:GPS:Location:GPS Longitude Ref             |
+| Headline                   | IPTC:Other:Headline                             |
+| ISO Speed Ratings          | EXIF:ExifIFD:Image:ISO                          |
+| Image Description          | EXIF:IFD0:Image:Image Description               |
+| Image Length               | EXIF:ExifIFD:Image:Exif Image Width             |
+| Image Unique ID            | EXIF:ExifIFD:Image:Image Unique ID              |
+| Image Width                | File:Image:Image Width                          |
+| Instructions               | XMP:XMP-photoshop:Image:Instructions            |
+| InstructionalDescription   | XMP:XMP-znr:Unknown:International Description   |
+| InternationalTitle         | XMP:XMP-znr:Unknown:International Title         |
+| Keywords                   | IPTC:Other:Keywords                             |
+| Label                      | XMP:XMP-xmp:Image:Label                         |
+| Lens Make                  | EXIF:ExifIFD:Image:Lens Make                    |
+| Lens Model                 | EXIF:ExifIFD:Image:Lens Model                   |
+| Manufacturer               | EXIF:IFD0:Camera:Make                           |
+| Max Aperture Value         | EXIF:ExifIFD:Camera:Max Aperture Value          |
+| Metering Mode              | EXIF:ExifIFD:Camera:Metering Mode               |
+| Model                      | EXIF:IFD0:Camera:Camera Model Name              |
+| Model Version              | IPTC:Other:Envelope Record Version              |
+| Object Name                | IPTC:Other:Object Name                          |
+| Offset Time                | EXIF:ExifIFD:Time:Offset Time                   |
+| Offset Time Original       | EXIF:ExifIFD:Time:Offset Time Original          |
+| Orientation                | EXIF:IFD0:Image:Orientation                     |
+| Photometric Interpretation | EXIF:IFD0:Image:Photometric Interpretation      |
+| Pixel X Dimension          | EXIF:ExifIFD:Image:Exif Image Width             |
+| Pixel Y Dimension          | EXIF:ExifIFD:Image:Exif Image Height            |
+| Planar Configuration       | EXIF:IFD0:Image:Planar Configuration            |
+| PublishedIn                | XMP:XMP-znr:Unknown:Published In                |
+| Rating                     | XMP:XMP-znr:Unknown:Rating                      |
+| Rating Percent             | XMP:XMP-microsoft:Image:Rating Percent          |
+| RatingPercent              | XMP:XMP-microsoft:Image:Rating Percent          |
+| Record Version             | IPTC:Other:Application Record Version           |
+| Resolution Unit            | EXIF:IFD0:Image:Resolution Unit                 |
+| Rights                     | XMP:XMP-dc:Author:Rights                        |
+| Scene Capture Type         | EXIF:ExifIFD:Camera:Scene Capture Type          |
+| Shutter speed              | EXIF:ExifIFD:Image:Shutter Speed Value          |
+| Software                   | EXIF:IFD0:Image:Software                        |
+| Source                     | IPTC:Author:Source                              |
+| Special Instructions       | IPTC:Other:Special Instructions                 |
+| Sub-seconds Time           | EXIF:ExifIFD:Time:Sub Sec Time                  |
+| Sub-seconds Time Digitized | EXIF:ExifIFD:Time:Sub Sec Time Digitized        |
+| Sub-seconds Time Original  | EXIF:ExifIFD:Time:Sub Sec Time Original         |
+| Subject                    | XMP:XMP-dc:Image:Subject                        |
+| Time Created               | IPTC:Time:Time Created                          |
+| Title                      | XMP:XMP-dc:Image:Title                          |
+| Transmission Reference     | IPTC:Other:Original Transmission Reference      |
+| Urgency                    | IPTC:Other:Urgency                              |
+| White Balance              | EXIF:ExifIFD:Camera:White Balance               |
+| Writer                     | IPTC:Author:Writer-Editor                       |
+| X-Resolution               | EXIF:IFD0:Image:X Resolution                    |
+| Y-Resolution               | EXIF:IFD0:Image:Y Resolution                    |
+| YCbCr Positioning          | EXIF:IFD0:Image:Y Cb Cr Positioning             |
+| film                       | XMP:XMP-znr:Unknown:Film                        |
+| filter                     | XMP:XMP-znr:Unknown:Filter                      |
+| mezikrouzek                | XMP:XMP-znr:Unknown:Mezikrouzek                 |
+| tripod                     | XMP:XMP-znr:Unknown:Tripod                      |
+| use                        | XMP:XMP-znr:Unknown:Use                         |
+
+### Problems
+When setting the Tag **EXIF:ExifIFD:Image:UserComment** the register **More** of the photo information cannot display any information of the photo.
