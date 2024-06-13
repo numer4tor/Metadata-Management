@@ -6,7 +6,7 @@ With this project I would like to create some clarity.
 
 The metadata mapping can be found in the corresponding markdown files:
 - [JPEG](./JPEG.md)
-- [MP4](./MP4.md)
+- [MP4](./MP4v2.md)
 
 To manage the metadata, I use the following tools:
 - [ExifTool](https://exiftool.org/)
@@ -51,3 +51,21 @@ Here some useful commands:
 .\ffmpeg.exe  -i .\input.mov -c:v libx264 -c:a copy .\output.mp4
 
 ```
+
+### Convert MOV files
+
+Synology photos doesn't preview .mov videos. Therfore I convert them with ffmpeg to .mp4 files using the following command:
+
+```
+ffmpeg -i INPUT.mov \
+  -c:v libx264 \
+  -crf 17 \
+  -c:a copy \
+  -brand mp42:0
+  OUTPUT.mp4
+```
+
+- **-c:v libx264**: convert the video file with H264 encoding
+- **-crf 17 crf**: Constant Rate Factor
+- **-c:a copy**: Copy the audio from original video to destination video file
+- **-brand mp42:0**: Use Major Brand "MP4 v2 [ISO 14496-14]"

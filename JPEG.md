@@ -1,7 +1,7 @@
-# JPEG Metadata Management
+# JPEG
 Manage metadata for JPEG pictures
 
-- [JPEG Metadata Management](#jpeg-metadata-management)
+- [JPEG](#jpeg)
   - [Timestamp format](#timestamp-format)
   - [Windows File Explorer](#windows-file-explorer)
   - [Zoner Photo Studio X](#zoner-photo-studio-x)
@@ -9,6 +9,7 @@ Manage metadata for JPEG pictures
     - [Information](#information)
     - [More](#more)
     - [Problems](#problems)
+
 
 ## Timestamp format
 Some information to timestamp format:
@@ -179,7 +180,7 @@ The mapping from the JPEG metadata to the Syonology Photos metadata in the tab I
 | Tags                  | 1. XMP:XMP-dc:Image:Subject <br/> 2. IPTC:Other:Keywords                                             |
 
 ### More
-The mapping from the JPEG metadata to the Syonology Photos metadata in the tab Information is as follows:
+The mapping from the JPEG metadata to the Syonology Photos metadata in the tab More is as follows:
 
 | Synology Photos Field      | Metadata Field                                  |
 | -------------------------- | ----------------------------------------------- |
@@ -278,4 +279,5 @@ The mapping from the JPEG metadata to the Syonology Photos metadata in the tab I
 | use                        | XMP:XMP-znr:Unknown:Use                         |
 
 ### Problems
-When setting the Tag **EXIF:ExifIFD:Image:UserComment** the register **More** of the photo information cannot display any information of the photo.
+- When setting the Tag **EXIF:ExifIFD:Image:UserComment** the register **More** of the photo information cannot display any information of the photo.
+- Synology Photos does not take account of the **timezone** as it does e.g. for MP4 files. Therefore the ordering with files of other format can be wrong. See [this post](https://community.synology.com/enu/forum/1/post/138615).
