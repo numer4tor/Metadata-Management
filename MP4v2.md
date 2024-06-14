@@ -11,11 +11,10 @@ Manage metadata for MP4 v2 [ISO 14496-14] videos
   - [Synology Photos](#synology-photos)
     - [Information](#information)
     - [More](#more)
-    - [Time Metadata  Mapping](#time-metadata--mapping)
-    - [Set Creation Date](#set-creation-date)
+  - [Update Metadata](#update-metadata)
+    - [Set Creation Date with timezone](#set-creation-date-with-timezone)
     - [Set GPS](#set-gps)
     - [All in One](#all-in-one)
-    - [File Format](#file-format)
 
 
 
@@ -219,89 +218,88 @@ The mapping from the sidecar file to the file metadata is as follows:
 ### Information
 The mapping from the JPEG metadata to the Syonology Photos metadata in the tab Information is as follows (see also [this article](https://kb.synology.com/en-uk/DSM/tutorial/What_metadata_standards_does_Synology_Photos_support)):
 
-| Synology Photos Field | Metadata Field                                                                                                  |
-| --------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Description           | N/A                                                                                                             |
-| Rating                | N/A                                                                                                             |
-| Date                  | 1. QuickTime:Keys:Time:CreationDate <br/> 2. QuickTime:Time:CreateDate <br/> 3. File:System:Time:FileModifyDate |
-| Tags                  | N/A                                                                                                             |
+| Synology Photos Field | Metadata Field                                                                                                                                  |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Description           | N/A                                                                                                                                             |
+| Rating                | N/A                                                                                                                                             |
+| Date                  | 1. QuickTime:Keys:Time:CreationDate <br/> 2. QuickTime:Time:CreateDate <br/> 3. XMP:XMP-xmp:Time:Create Date 4. File:System:Time:FileModifyDate |
+| Tags                  | N/A                                                                                                                                             |
+3800973846
 
 ### More
 The mapping from the MP4 v2 metadata to the Syonology Photos metadata in the tab More is as follows:
 
-| Synology Photos Field            | Metadata Field                               | check |
-| -------------------------------- | -------------------------------------------- | ----- |
-| Audio Channel Type               | QuickTime:Track2:Audio:Audio Channels        | x     |
-| Audio Compressor                 | QuickTime:Track2:Audio:Audio Format          | x     |
-| Audio Sample Rate                | QuickTime:Track2:Audio:Audio Sample Rate     | x     |
-| Audio Track Create Date          | QuickTime:Track1:Time:Track Create Date      | x     |
-| Audio Track Duration             | QuickTime:Track1:Video:Track Duration        | todo  |
-| Audio Track Layer                | QuickTime:Track1:Video:Track Layer           | todo  |
-| Audio Track Modify Date          | QuickTime:Track1:Time:Track Modify Date      | x     |
-| Balance                          | QuickTime:Track2:Audio:Balance               | x     |
-| Bit Depth                        | QuickTime:Track1:Image:Bit Depth             | x     |
-| Bits Per Sample / Bit Rate       | QuickTime:Track2:Audio:Audio Bits Per Sample | x     |
-| Current Time                     | QuickTime:Video:Current Time                 | x     |
-| Date-Time Original               | 1. QuickTime:Time:CreateDate <br/> 2. ?      | todo  |
-| Duration                         | QuickTime:Video:Duration                     | x     |
-| File Name                        | File:System:Other:File Name                  | x     |
-| File Size                        | File:System:Other:File Size                  | x     |
-| Graphics Mode                    | QuickTime:Track1:Video:Graphics Mode         | x     |
-| Handler Type                     | QuickTime:Track2:Video:Handler Type          | todo  |
-| Media Header Version             | QuickTime:Track2:Video:Media Header Version  | x     |
-| Media Language Code              |                                              | todo  |
-| Media Time Scale                 |                                              | todo  |
-| Media Track Create Date          | QuickTime:Track2:Time:Media Create Date      | x     |
-| Media Track Duration             | QuickTime:Track2:Video:Media Duration        | x     |
-| Media Track Modify Date          | QuickTime:Track2:Time:Media Modify Date      | x     |
-| Mime Type                        | File:Other:MIME Type                         | x     |
-| Modification Date-Time           | QuickTime:Time:Modify Date                   | x     |
-| Movie Header Version             | QuickTime:Video:Movie Header Version         | x     |
-| Next Track ID                    | QuickTime:Video:Next Track ID                | x     |
-| Operation Colours                | QuickTime:Track1:Video:Op Color              | x     |
-| Play Mode                        | QuickTime:UserData:Video:Play Mode           | x     |
-| Poster Time                      | QuickTime:Video:Poster Time                  | x     |
-| Preferred Rate                   | QuickTime:Video:Preferred Rate               | x     |
-| Preferred Volume                 | QuickTime:Video:Preferred Volume             | x     |
-| Preview Duration                 | QuickTime:Video:Preview Duration             | x     |
-| Preview Time                     | QuickTime:Video:Preview Time                 | x     |
-| QTime Compatible FileType Brand  | QuickTime:Video:Compatible Brands            | x     |
-| QTime Major FileType Brand       | QuickTime:Video:Major Brand                  | x     |
-| QTime Minor FileType Version     | QuickTime:Video:Minor Version                | x     |
-| Selection Duration               | QuickTime:Video:Selection Duration           | x     |
-| Selection Time                   | QuickTime:Video:Selection Time               | x     |
-| Source Image Height              | QuickTime:Track1:Image:Source Image Height   | x     |
-| Source Image Width               | QuickTime:Track1:Image:Source Image Width    | x     |
-| Time Scale                       | QuickTime:Video:Time Scale                   | x     |
-| Track Header Version             | QuickTime:Track1:Video:Track Header Version  | x     |
-| Track ID                         | QuickTime:Track1:Video:Track ID              | x     |
-| Track Volume                     | QuickTime:Track1:Video:Track Volume          | x     |
-| Video Aspect Ratio               |                                              | todo  |
-| Video Codec                      |                                              | todo  |
-| Video Frame Rate                 | QuickTime:Track1:Video:Video Frame Rate      | x     |
-| Video Height                     | QuickTime:Track1:Video:Image Height          | x     |
-| Video Track Create Date          | QuickTime:Track1:Time:Track Create Date      | x     |
-| Video Track Duration             |                                              | todo  |
-| Video Track Layer                |                                              | todo  |
-| Video Track Modify Date          | QuickTime:Track1:Time:Track Modify Date      | x     |
-| Video Width                      | QuickTime:Track1:Video:Image Width           | x     |
-| X Resolution                     | QuickTime:Track1:Image:X Resolution          | x     |
-| Y Resolution                     | QuickTime:Track1:Image:Y Resolution          | x     |
-| com.android.capture.fps          | QuickTime:Keys:Other:Android Capture FPS     | x     |
-| com.android.version              | QuickTime:Keys:Other:Android Version         | x     |
-| com.apple.quicktime.creationdate | QuickTime:Keys:Time:CreationDate             | x     |
+| Synology Photos Field            | Metadata Field                                 |
+| -------------------------------- | ---------------------------------------------- |
+| Audio Channel Type               | QuickTime:Track2:Audio:Audio Channels          |
+| Audio Compressor                 | QuickTime:Track2:Audio:Audio Format            |
+| Audio Sample Rate                | QuickTime:Track2:Audio:Audio Sample Rate       |
+| Audio Track Create Date          | QuickTime:Track2:Time:Track Create Date        |
+| Audio Track Duration             | QuickTime:Track2:Video:Track Duration          |
+| Audio Track Layer                | QuickTime:Track2:Video:Track Layer             |
+| Audio Track Modify Date          | QuickTime:Track2:Time:Track Modify Date        |
+| Balance                          | QuickTime:Track2:Audio:Balance                 |
+| Bit Depth                        | QuickTime:Track1:Image:Bit Depth               |
+| Bits Per Sample / Bit Rate       | QuickTime:Track2:Audio:Audio Bits Per Sample   |
+| Current Time                     | QuickTime:Video:Current Time                   |
+| Date-Time Original               | QuickTime:Time:CreateDate                      |
+| Duration                         | QuickTime:Video:Duration                       |
+| File Name                        | File:System:Other:File Name                    |
+| File Size                        | File:System:Other:File Size                    |
+| Graphics Mode                    | QuickTime:Track1:Video:Graphics Mode           |
+| Handler Type                     | QuickTime:Track2:Video:Handler Type            |
+| Media Header Version             | QuickTime:Track2:Video:Media Header Version    |
+| Media Language Code              | ?                                              |
+| Media Time Scale                 | ?                                              |
+| Media Track Create Date          | QuickTime:Track2:Time:Media Create Date        |
+| Media Track Duration             | QuickTime:Track2:Video:Media Duration          |
+| Media Track Modify Date          | QuickTime:Track2:Time:Media Modify Date        |
+| Mime Type                        | File:Other:MIME Type                           |
+| Modification Date-Time           | QuickTime:Time:Modify Date                     |
+| Movie Header Version             | QuickTime:Video:Movie Header Version           |
+| Next Track ID                    | QuickTime:Video:Next Track ID                  |
+| Operation Colours                | QuickTime:Track1:Video:Op Color                |
+| Play Mode                        | QuickTime:UserData:Video:Play Mode             |
+| Poster Time                      | QuickTime:Video:Poster Time                    |
+| Preferred Rate                   | QuickTime:Video:Preferred Rate                 |
+| Preferred Volume                 | QuickTime:Video:Preferred Volume               |
+| Preview Duration                 | QuickTime:Video:Preview Duration               |
+| Preview Time                     | QuickTime:Video:Preview Time                   |
+| QTime Compatible FileType Brand  | QuickTime:Video:Compatible Brands              |
+| QTime Major FileType Brand       | QuickTime:Video:Major Brand                    |
+| QTime Minor FileType Version     | QuickTime:Video:Minor Version                  |
+| Selection Duration               | QuickTime:Video:Selection Duration             |
+| Selection Time                   | QuickTime:Video:Selection Time                 |
+| Source Image Height              | QuickTime:Track1:Image:Source Image Height     |
+| Source Image Width               | QuickTime:Track1:Image:Source Image Width      |
+| Time Scale                       | QuickTime:Video:Time Scale                     |
+| Track Header Version             | QuickTime:Track1:Video:Track Header Version    |
+| Track ID                         | QuickTime:Track1:Video:Track ID                |
+| Track Volume                     | QuickTime:Track1:Video:Track Volume            |
+| Video Aspect Ratio               | ? QuickTime:Track1:Video:Matrix Coefficients ? |
+| Video Codec                      | ? Quicktime:Track1:Image:Compressor ID ?       |
+| Video Frame Rate                 | QuickTime:Track1:Video:Video Frame Rate        |
+| Video Height                     | QuickTime:Track1:Video:Image Height            |
+| Video Track Create Date          | QuickTime:Track1:Time:Track Create Date        |
+| Video Track Duration             | QuickTime:Track1:Video:Track Duration          |
+| Video Track Layer                | QuickTime:Track1:Video:Track Layer             |
+| Video Track Modify Date          | QuickTime:Track1:Time:Track Modify Date        |
+| Video Width                      | QuickTime:Track1:Video:Image Width             |
+| X Resolution                     | QuickTime:Track1:Image:X Resolution            |
+| Y Resolution                     | QuickTime:Track1:Image:Y Resolution            |
+| com.android.capture.fps          | QuickTime:Keys:Other:Android Capture FPS       |
+| com.android.version              | QuickTime:Keys:Other:Android Version           |
+| com.apple.quicktime.creationdate | QuickTime:Keys:Time:CreationDate               |
 
 
+## Update Metadata
 
-### Set Creation Date
-TODO
-I don't know why, but MP4 files haven't set the information when just upload it to synology Photos.
-To set all metadata correctly, just reset the CreateDate of the file:
+### Set Creation Date with timezone
+
+If you want, you can also set the Creation date with timezone. For this use the metatag `QuickTime:Keys:Time:CreationDate`:
 ```
-.\exiftool.exe -QuickTime:Keys:Time:CreationDate<QuickTime:Time:CreateDate FILE
-.\exiftool.exe -QuickTime:Keys:Time:CreationDate>QuickTime:Time:CreateDate FILE
+.\exiftool.exe FILE -QuickTime:Keys:Time:CreationDate="YYYY:MM:DD HH:MM:SS+HH:MM"
 ```
-
 
 ### Set GPS
 
@@ -312,21 +310,8 @@ Anyway - I like to write GPS information directly into the metadata of the file,
 - XMP:XMP-exif:Location:GPSAltitude
 - XMP:XMP-exif:Location:GPSAltitudeRef
 
-You can write data from a sidecar file (XMP_FILE) to the metadata of a mp4 file (FILE) with the following command:
-```
-.\exiftool.exe -tagsfromfile XMP_FILE FILE
-```
-You can use format options to read the file where:
-- %f = filename
-- %d = directory
-- %e = extension
-- 
-For example if the sidecar file has the same name as the mp4 file and it is in the same folder, use: 
-```
-.\exiftool.exe -tagsfromfile %f.xmp FILE
-```
-
-Then make sure that the GPS information is also stored in the metadata field `QuickTime:UserData:Location:GPSCoordinates`:
+This is done when writing the metadata from the XMP file created by ZPS.  
+Then make sure that the GPS information is also stored in the metadata field `QuickTime:UserData:Location:GPSCoordinates`.
 ```
 .\exiftool.exe -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates FILE
 ```
@@ -334,12 +319,12 @@ Then make sure that the GPS information is also stored in the metadata field `Qu
 ### All in One
 For each folder containing MP4 with the corresponding XMP files, execute:
 ```
-# Set Creation Date
-.\exiftool.exe -ext mp4 -overwrite_original -QuickTime:Keys:Time:CreationDate<QuickTime:Time:CreateDate .
-.\exiftool.exe -ext mp4 -overwrite_original -QuickTime:Keys:Time:CreationDate>QuickTime:Time:CreateDate .
-.\exiftool.exe -ext mp4 -overwrite_original -QuickTime:Keys:Time:CreationDate= .
+# Set metadata according to XMP file
+.\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
+
+# Set Creation Date with timezone (in this example +0300, adapt if needed)
+.\exiftool.exe -ext mp4 -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+0200' .
 
 # Set GPS
-.\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
 .\exiftool.exe -ext mp4 -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
 ```

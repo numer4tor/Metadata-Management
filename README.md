@@ -35,8 +35,14 @@ Here some useful commands:
 # Only select lines containing TEXT
 .\exiftool.exe -a -e FILE | select-string -pattern TEXT
 
-# Write tags from an XMP sidecar file to the metadata of the mp4 file
+# Write tags from an XMP sidecar file to the metadata of the MP4 file with the same name
+# %f = filename
+# %d = directory
+# %e = extension
 .\exiftool.exe -tagsfromfile %f.xmp 'FILE'
+
+# Do the same as the last command but for all files in a folder ending with .mp4
+.\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
 
 ```
 
