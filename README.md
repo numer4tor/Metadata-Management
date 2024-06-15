@@ -6,7 +6,8 @@ With this project I would like to create some clarity.
 
 The metadata mapping can be found in the corresponding markdown files:
 - [JPEG](./JPEG.md)
-- [MP4](./MP4v2.md)
+- [MP4v1](./MP4v1.md)
+- [MP4v2](./MP4v2.md)
 
 To manage the metadata, I use the following tools:
 - [ExifTool](https://exiftool.org/)

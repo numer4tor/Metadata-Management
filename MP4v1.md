@@ -1,7 +1,7 @@
-# MP4 v2 [ISO 14496-14]
-Manage metadata for MP4 v2 [ISO 14496-14] videos
+# MP4 Base Media v1 [IS0 14496-12:2003]
+Manage metadata for MP4 Base Media v1 [IS0 14496-12:2003] videos
 
-- [MP4 v2 \[ISO 14496-14\]](#mp4-v2-iso-14496-14)
+- [MP4 Base Media v1 \[IS0 14496-12:2003\]](#mp4-base-media-v1-is0-14496-122003)
   - [Timestamp format](#timestamp-format)
   - [Windows File Explorer](#windows-file-explorer)
   - [Zoner Photo Studio X](#zoner-photo-studio-x)
@@ -39,7 +39,7 @@ Some information to timestamp format:
 
 
 ## Windows File Explorer
-The mapping from the Windows Fileexplorer to the MP4 v2 metadata is as follows:
+The mapping from the Windows Fileexplorer to the MP4 v1 metadata is as follows:
 
 | Category     | Field                    | Metadata Field                               |
 | ------------ | ------------------------ | -------------------------------------------- |
@@ -215,7 +215,7 @@ The mapping from the sidecar file to the file metadata is as follows:
 ## Synology Photos
 
 ### Information
-The mapping from the MP4 v2 metadata to the Syonology Photos metadata in the tab Information is as follows (see also [this article](https://kb.synology.com/en-uk/DSM/tutorial/What_metadata_standards_does_Synology_Photos_support)):
+The mapping from the MP4 v1 metadata to the Syonology Photos metadata in the tab Information is as follows (see also [this article](https://kb.synology.com/en-uk/DSM/tutorial/What_metadata_standards_does_Synology_Photos_support)):
 
 | Synology Photos Field | Metadata Field                                                                                                  |
 | --------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -225,7 +225,7 @@ The mapping from the MP4 v2 metadata to the Syonology Photos metadata in the tab
 | Tags                  | N/A                                                                                                             |
 
 ### More
-The mapping from the MP4 v2 metadata to the Syonology Photos metadata in the tab More is as follows:
+The mapping from the MP4 v1 metadata to the Syonology Photos metadata in the tab More is as follows:
 
 | Synology Photos Field            | Metadata Field                            |
 | -------------------------------- | ----------------------------------------- |
@@ -265,7 +265,6 @@ The mapping from the MP4 v2 metadata to the Syonology Photos metadata in the tab
 | QTime Compatible FileType Brand  | QuickTime:Video:CompatibleBrands          |
 | QTime Major FileType Brand       | QuickTime:Video:MajorBrand                |
 | QTime Minor FileType Version     | QuickTime:Video:MinorVersion              |
-| Play Mode                        | QuickTime:UserData:Video:Play Mode        |
 | Selection Duration               | QuickTime:Video:SelectionDuration         |
 | Selection Time                   | QuickTime:Video:SelectionTime             |
 | Source Image Height              | QuickTime:Track1:Image:SourceImageHeight  |
@@ -285,8 +284,6 @@ The mapping from the MP4 v2 metadata to the Syonology Photos metadata in the tab
 | Video Width                      | QuickTime:Track1:Video:ImageWidth         |
 | X Resolution                     | QuickTime:Track1:Image:XResolution        |
 | Y Resolution                     | QuickTime:Track1:Image:YResolution        |
-| com.android.capture.fps          | QuickTime:Keys:Other:AndroidCaptureFPS    |
-| com.android.version              | QuickTime:Keys:Other:AndroidVersion       |
 | com.apple.quicktime.creationdate | QuickTime:Keys:Time:CreationDate          |
 
 
