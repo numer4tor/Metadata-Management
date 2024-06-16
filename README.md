@@ -76,3 +76,28 @@ ffmpeg -i INPUT.mov \
 - **-crf 17 crf**: Constant Rate Factor
 - **-c:a copy**: Copy the audio from original video to destination video file
 - **-brand mp42:0**: Use Major Brand "MP4 v2 [ISO 14496-14]"
+
+
+## Set Metadata
+To be sure, that all files have correct metadata set, I do the following:
+- MP4: Set Metadata according to XMP file
+- JPEG & MP4: Set Offset Time
+- JPEG: Remove UserComment
+- MP4: Set GPS
+
+This can be done with the following commands:
+```
+# Set metadata according to XMP file
+.\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
+
+# Set Offset Time
+.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTime="+02:00" .
+.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTimeOriginal="+02:00" .
+.\exiftool.exe -ext mp4 -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
+
+# Remove UserComment
+.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Image:UserComment= .
+
+# Set GPS
+.\exiftool.exe -ext mp4 -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
+```

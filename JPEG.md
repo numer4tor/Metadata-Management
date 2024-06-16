@@ -165,6 +165,77 @@ The mapping from ZPS X to the JPEG metadata is as follows:
 | Benutzerinfo      | Verwendung                   | XMP:XMP-znr:Unknown:Use                                                                             |
 
 
+### Mapping from Windows Explorer
+The mapping from the Windows Fileexplorer to the JPEG metadata available in ZPS X is as follows:
+
+| Windows Category             | Windows Field                | ZPS Category      | ZPS Field                    |
+| ---------------------------- | ---------------------------- | ----------------- | ---------------------------- |
+| Beschreibung                 | Titel                        | Textinformationen | Name <br/> Beschreibung      |
+| Beschreibung                 | Betreff                      |                   |                              |
+| Beschreibung                 | Bewertung                    | Textinformationen | Bewertung                    |
+| Beschreibung                 | Markierungen                 | Schlüsselwörter   | Gewählte Schlüsselwörter     |
+| Beschreibung                 | Kommentare                   |                   |                              |
+| Ursprung                     | Autoren                      | Textinformationen | Autoren                      |
+| Ursprung                     | Aufnahmedatum                | Fotoinformationen | Erstellt <br/> Digitalisiert |
+| Ursprung                     | Programmname                 | Fotoinformationen | Software                     |
+| Ursprung                     | Erfassungsdatum              |                   |                              |
+| Ursprung                     | Copyright                    | Textinformationen | Copyright                    |
+| Bild                         | Bild-ID                      |                   |                              |
+| Bild                         | Abmessungen                  |                   |                              |
+| Bild                         | Breite                       |                   |                              |
+| Bild                         | Höhe                         |                   |                              |
+| Bild                         | Horizontale Auflösung        | Fotoinformationen | Auflösung                    |
+| Bild                         | Vertikale Auflösung          | Fotoinformationen | Auflösung                    |
+| Bild                         | Bittiefe                     |                   |                              |
+| Bild                         | Komprimierung                |                   |                              |
+| Bild                         | Auflösungseinheit            |                   |                              |
+| Bild                         | Farbdarstellung              | Fotoinformationen | Farbraum                     |
+| Bild                         | Komprimierte Bits/Pixel      |                   |                              |
+| Kamera                       | Kamerahersteller             | Fotoinformationen | Hersteller der Kamera        |
+| Kamera                       | Kameramodell                 | Fotoinformationen | Kameramodell                 |
+| Kamera                       | Blendenzahl                  | Fotoinformationen | Blendenzahl                  |
+| Kamera                       | Belichtungszeit              | Fotoinformationen | Belichtungszeit              |
+| Kamera                       | ISO-Filmempfindlichkeit      | Fotoinformationen | Empfindlichkeit              |
+| Kamera                       | Lichtwert                    |                   |                              |
+| Kamera                       | Brennweite                   | Fotoinformationen | Brennweite                   |
+| Kamera                       | Maximale Blende              |                   |                              |
+| Kamera                       | Messmodus                    |                   |                              |
+| Kamera                       | Abstand                      |                   |                              |
+| Kamera                       | Blitzlichtmodus              | Fotoinformationen | Blitz Detaillierte Info      |
+| Kamera                       | Blitzlichtenergie            |                   |                              |
+| Kamera                       | 35mm Brennweite              | Fotoinformationen | Brennweite (EQ 35mm)         |
+| Erweiterte Fotoeigenschaften | Objektivhersteller           |                   |                              |
+| Erweiterte Fotoeigenschaften | Objektivmodell               |                   |                              |
+| Erweiterte Fotoeigenschaften | Blitzlichthersteller         |                   |                              |
+| Erweiterte Fotoeigenschaften | Blitzlichtmodell             |                   |                              |
+| Erweiterte Fotoeigenschaften | Seriennummer der Kamera      |                   |                              |
+| Erweiterte Fotoeigenschaften | Kontrast                     | Fotoinformationen | Kontrast                     |
+| Erweiterte Fotoeigenschaften | Helligkeit                   |                   |                              |
+| Erweiterte Fotoeigenschaften | Lichtquelle                  | Fotoinformationen | Lichtquelle                  |
+| Erweiterte Fotoeigenschaften | Belichtungsprogramm          | Fotoinformationen | Belichtungsprogramm          |
+| Erweiterte Fotoeigenschaften | Sättigung                    | Fotoinformationen | Sättigung                    |
+| Erweiterte Fotoeigenschaften | Schärfe                      | Fotoinformationen | Schärfe                      |
+| Erweiterte Fotoeigenschaften | Weissausgleich               | Fotoinformationen | Weissabgleich                |
+| Erweiterte Fotoeigenschaften | Fotometrische Interpretation |                   |                              |
+| Erweiterte Fotoeigenschaften | Digitalzoom                  |                   |                              |
+| Erweiterte Fotoeigenschaften | EXIF-Version                 |                   |                              |
+| GPS                          | Breitengrad                  | Fotoinformationen | Geographische Breite         |
+| GPS                          | Längengrad                   | Fotoinformationen | Geographische Länge          |
+| GPS                          | Höhe über Normal-Null        | Fotoinformationen | Höhe über dem Meeresspiegel  |
+| Datei                        | Name                         | Fotoinformationen |                              |
+| Datei                        | Elementtyp                   |                   |                              |
+| Datei                        | Dateispeicherort             |                   |                              |
+| Datei                        | Erstelldatum                 |                   |                              |
+| Datei                        | Änderungsdatum               |                   |                              |
+| Datei                        | Grösse                       |                   |                              |
+| Datei                        | Attribute                    |                   |                              |
+| Datei                        | Verfügbarkeit                |                   |                              |
+| Datei                        | Offlinestatus                |                   |                              |
+| Datei                        | Freigegeben für              |                   |                              |
+| Datei                        | Besitzer                     |                   |                              |
+| Datei                        | Computer                     |                   |                              |
+
+
 ## Synology Photos
 
 ### Information
@@ -172,7 +243,7 @@ The mapping from the JPEG metadata to the Syonology Photos metadata in the tab I
 
 | Synology Photos Field | Metadata Field                                                                                                                                                                                                   |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Description           | EXIF:IFD0:Image:Image Description                                                                                                                                                                                |
+| Description           | EXIF:IFD0:Image:ImageDescription                                                                                                                                                                                |
 | Rating                | 1. EXIF:IFD0:Image:Rating <br/> 2. EXIF:IFD0:Image:RatingPercent <br/> 3. XMP:XMP-xmp:Image:Rating <br/> 4. XMP:XMP-xmp:Image:RatingPercent <br/> 5. XMP:XMP-microsoft:Image:RatingPercent                       |
 | Date Taken            | 1. EXIF:ExifIFD:Time:DateTimeOriginal <br/> 2. EXIF:ExifIFD:Time:CreateDate <br/> 3. EXIF:IFD0:Time:ModifyDate <br/> 4. File:System:Time:FileModifyDate                                                          |
 | Geolocation           | Composite:Location:GPSPosition                                                                                                                                                                                   |
@@ -279,5 +350,7 @@ The mapping from the JPEG metadata to the Syonology Photos metadata in the tab M
 | use                        | XMP:XMP-znr:Unknown:Use                      |
 
 ### Problems
-- When setting the Tag **EXIF:ExifIFD:Image:UserComment** the register **More** of the photo information cannot display any information of the photo.
+- When setting the Tag **EXIF:ExifIFD:Image:UserComment** the register **More** of the photo information cannot display any information of the photo. Therefore I remove this information:  
+`.\exiftool.exe -EXIF:ExifIFD:Image:UserComment= FILE`
+
 - Synology Photos does not take account of the **timezone** as it does e.g. for MP4 files. Therefore the ordering with files of other format can be wrong. See [this post](https://community.synology.com/enu/forum/1/post/138615).

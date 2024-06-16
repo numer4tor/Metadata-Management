@@ -320,8 +320,8 @@ For each folder containing MP4 with the corresponding XMP files, execute:
 # Set metadata according to XMP file
 .\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
 
-# Set Creation Date with timezone (in this example +0300, adapt if needed)
-.\exiftool.exe -ext mp4 -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+0200' .
+# Set Creation Date with timezone (in this example +02:00, adapt if needed)
+.\exiftool.exe -ext mp4 -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
 
 # Set GPS
 .\exiftool.exe -ext mp4 -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
