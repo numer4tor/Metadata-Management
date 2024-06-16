@@ -5,6 +5,7 @@ Manage metadata for JPEG pictures
   - [Timestamp format](#timestamp-format)
   - [Windows File Explorer](#windows-file-explorer)
   - [Zoner Photo Studio X](#zoner-photo-studio-x)
+    - [Mapping from Windows Explorer](#mapping-from-windows-explorer)
   - [Synology Photos](#synology-photos)
     - [Information](#information)
     - [More](#more)
