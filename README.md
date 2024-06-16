@@ -88,16 +88,16 @@ To be sure, that all files have correct metadata set, I do the following:
 This can be done with the following commands:
 ```
 # Set metadata according to XMP file
-.\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
+.\exiftool.exe -ext mp4 -ext mov -overwrite_original -tagsfromfile %f.xmp .
 
 # Set Offset Time
 .\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTime="+02:00" .
 .\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTimeOriginal="+02:00" .
-.\exiftool.exe -ext mp4 -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
+.\exiftool.exe -ext mp4 -ext mov -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
 
 # Remove UserComment
 .\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Image:UserComment= .
 
 # Set GPS
-.\exiftool.exe -ext mp4 -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
+.\exiftool.exe -ext mp4 -ext mov -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
 ```
