@@ -45,6 +45,12 @@ Here some useful commands:
 # Do the same as the last command but for all files in a folder ending with .mp4
 .\exiftool.exe -ext mp4 -overwrite_original -tagsfromfile %f.xmp .
 
+# Set all dates
+.\exiftool.exe -AllDates="2023-07-08 16:00:00" . -overwrite_original
+
+# Set all dates increased by 30 seconds ordered by filename for all files in the current folder
+.\exiftool.exe '-AllDates+<00:00:${filesequence;$_*=30}' . -fileorder filename -overwrite_original
+
 ```
 
 
@@ -86,6 +92,7 @@ I use the following Tags:
 - Ferien
 - Geburtstag
 - Hochzeit
+- Paradise Kid
 - Stefanie
 - Wandern
 
