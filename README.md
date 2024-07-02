@@ -55,15 +55,6 @@ Here some useful commands:
 
 ```
 # convert .mov video file with H264 encoding:
-.\ffmpeg.exe  -i .\input.mov -c:v libx264 -c:a copy .\output.mp4
-
-```
-
-### Convert MOV files
-
-Synology photos doesn't preview .mov videos. Therfore I convert them with ffmpeg to .mp4 files using the following command:
-
-```
 ffmpeg -i INPUT.mov \
   -c:v libx264 \
   -crf 17 \
@@ -71,33 +62,74 @@ ffmpeg -i INPUT.mov \
   -brand mp42:0
   OUTPUT.mp4
 ```
-
 - **-c:v libx264**: convert the video file with H264 encoding
 - **-crf 17 crf**: Constant Rate Factor
 - **-c:a copy**: Copy the audio from original video to destination video file
 - **-brand mp42:0**: Use Major Brand "MP4 v2 [ISO 14496-14]"
 
 
-## Set Metadata
-To be sure, that all files have correct metadata set, I do the following:
-- MP4: Set Metadata according to XMP file
-- JPEG & MP4: Set Offset Time
-- JPEG: Remove UserComment
-- MP4: Set GPS
+
+## How to organize files
+
+To organize my files, I do the following:
+1. Set Metadata in Zoner Photo Studio X
+2. Add metadata to files according to XMP files
+3. Remove UserComment
+4. Add additional metadata not available in Zoner Photo Studio X
+5. Rename Files
+
+
+### Set Metadata in Zoner Photo Studio X
+
+I use the following Tags:
+- Familie
+- Ferien
+- Geburtstag
+- Hochzeit
+- Stefanie
+- Wandern
+
+
+### Add metadata to files according to XMP files
 
 This can be done with the following commands:
 ```
 # Set metadata according to XMP file
 .\exiftool.exe -ext mp4 -ext mov -overwrite_original -tagsfromfile %f.xmp .
+```
 
+### Remove UserComment
+
+Zoner Photo Studio X sets the metadata field UserComment for JPEG files, which cannot be read by Synology Photos. Therefore I remove it.
+
+```
+# Remove UserComment
+.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Image:UserComment= .
+```
+
+
+### Add additional metadata not available in Zoner Photo Studio X
+
+I add the following additional metadata:
+- JPEG & MP4: Offset Time
+- MP4: GPS
+
+```
 # Set Offset Time
 .\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTime="+02:00" .
 .\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTimeOriginal="+02:00" .
 .\exiftool.exe -ext mp4 -ext mov -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
 
-# Remove UserComment
-.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Image:UserComment= .
-
 # Set GPS
 .\exiftool.exe -ext mp4 -ext mov -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
 ```
+
+### Rename Files
+
+I rename files according to the creation date. I do this in Zoner Photo Studio X by using the function "Stapelverarbeitung - Umbenennen" with the following input:
+- Dateiname: {Y}{M}{D}\_{h}{m}{s}\_{C}
+- Dateierweiterung: {E}
+- Datumstyp: Erstellungsdatum
+- Beginn bei: 1
+- Erhöhen um: 1
+- Ziffern: 3
