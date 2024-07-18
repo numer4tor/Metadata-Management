@@ -93,7 +93,7 @@ I use the following Tags:
 - Geburtstag
 - Hochzeit
 - Paradise Kid
-- Stefanie
+- Skifahren
 - Wandern
 
 
