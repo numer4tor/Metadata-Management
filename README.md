@@ -125,6 +125,7 @@ I add the following additional metadata:
 # Set Offset Time
 .\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTime="+02:00" .
 .\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTimeOriginal="+02:00" .
+.\exiftool.exe -ext mp4 -ext mov -overwrite_original -AllDates<xmp:xmp-exif:time:datetimeoriginal .
 .\exiftool.exe -ext mp4 -ext mov -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
 
 # Set GPS
