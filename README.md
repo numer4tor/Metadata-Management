@@ -111,7 +111,7 @@ Zoner Photo Studio X sets the metadata field UserComment for JPEG files, which c
 
 ```
 # Remove UserComment
-.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Image:UserComment= .
+.\exiftool.exe -ext jpg -ext jpeg -overwrite_original -EXIF:ExifIFD:Image:UserComment= .
 ```
 
 
@@ -122,10 +122,14 @@ I add the following additional metadata:
 - MP4: GPS
 
 ```
-# Set Offset Time
-.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTime="+02:00" .
-.\exiftool.exe -ext jpg -overwrite_original -EXIF:ExifIFD:Time:OffsetTimeOriginal="+02:00" .
+# Set Offset Time for images
+.\exiftool.exe -ext jpg -ext jpeg -overwrite_original -EXIF:ExifIFD:Time:OffsetTime="+02:00" .
+.\exiftool.exe -ext jpg -ext jpeg -overwrite_original -EXIF:ExifIFD:Time:OffsetTimeOriginal="+02:00" .
+
+# Only if necessary - set all dates for movies
 .\exiftool.exe -ext mp4 -ext mov -overwrite_original -AllDates<xmp:xmp-exif:time:datetimeoriginal .
+
+# Set CreationDate for movies
 .\exiftool.exe -ext mp4 -ext mov -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
 
 # Set GPS
