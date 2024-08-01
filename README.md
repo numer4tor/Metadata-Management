@@ -92,6 +92,7 @@ I use the following Tags:
 - Ferien
 - Geburtstag
 - Hochzeit
+- Motorrad
 - Paradise Kid
 - Skifahren
 - Wandern
@@ -102,7 +103,7 @@ I use the following Tags:
 This can be done with the following commands:
 ```
 # Set metadata according to XMP file
-.\exiftool.exe -ext mp4 -ext mov -overwrite_original -tagsfromfile %f.xmp .
+.\exiftool.exe -ext mp4 -ext mov -ext gif -overwrite_original -tagsfromfile %f.xmp .
 ```
 
 ### Remove UserComment
@@ -127,13 +128,13 @@ I add the following additional metadata:
 .\exiftool.exe -ext jpg -ext jpeg -overwrite_original -EXIF:ExifIFD:Time:OffsetTimeOriginal="+02:00" .
 
 # Only if necessary - set all dates for movies
-.\exiftool.exe -ext mp4 -ext mov -overwrite_original -AllDates<xmp:xmp-exif:time:datetimeoriginal .
+.\exiftool.exe -ext mp4 -ext mov -ext gif -overwrite_original -AllDates<xmp:xmp-exif:time:datetimeoriginal .
 
 # Set CreationDate for movies
-.\exiftool.exe -ext mp4 -ext mov -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
+.\exiftool.exe -ext mp4 -ext mov -ext gif -overwrite_original '-QuickTime:Keys:Time:CreationDate<${QuickTime:Time:CreateDate}+02:00' .
 
 # Set GPS
-.\exiftool.exe -ext mp4 -ext mov -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
+.\exiftool.exe -ext mp4 -ext mov -ext gif -overwrite_original -Composite:GPSPosition>QuickTime:UserData:Location:GPSCoordinates .
 ```
 
 ### Rename Files
