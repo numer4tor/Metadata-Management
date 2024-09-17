@@ -102,6 +102,7 @@ I use the following Tags:
 - Paradise Kid
 - Skifahren
 - Studium
+- UHC WWSB
 - Wandern
 
 
