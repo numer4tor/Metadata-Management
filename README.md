@@ -97,6 +97,7 @@ I use the following Tags:
 - Hochzeit
 - Konzert
 - Landschaft
+- Laufen
 - Motorrad
 - Pubquiz
 - Paradise Kid
