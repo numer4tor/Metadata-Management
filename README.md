@@ -99,6 +99,7 @@ I use the following Tags:
 - Landschaft
 - Laufen
 - Motorrad
+- Openair
 - Pubquiz
 - Paradise Kid
 - Skifahren
