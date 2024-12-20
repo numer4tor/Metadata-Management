@@ -88,6 +88,7 @@ To organize my files, I do the following:
 ### Set Metadata in Zoner Photo Studio X
 
 I use the following Tags:
+- Arbeit
 - Biken
 - ChiliSchotten
 - Familie
