@@ -103,6 +103,7 @@ I use the following Tags:
 - Openair
 - Pubquiz
 - Paradise Kid
+- Schule
 - Skifahren
 - Studium
 - UHC WWSB
