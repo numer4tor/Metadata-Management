@@ -90,7 +90,6 @@ To organize my files, I do the following:
 I use the following Tags:
 - Arbeit
 - Biken
-- ChiliSchotten
 - Familie
 - Ferien
 - Geburtstag
