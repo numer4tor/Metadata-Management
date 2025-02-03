@@ -90,9 +90,11 @@ To organize my files, I do the following:
 I use the following Tags:
 - Arbeit
 - Biken
+- Buschness
 - Familie
 - Ferien
 - Geburtstag
+- Geocache
 - Gymer
 - Hochzeit
 - Konzert
