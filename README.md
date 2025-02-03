@@ -94,7 +94,7 @@ I use the following Tags:
 - Familie
 - Ferien
 - Geburtstag
-- Geocache
+- Geocaching
 - Gymer
 - Hochzeit
 - Konzert
